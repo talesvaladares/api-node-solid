@@ -6,3 +6,5 @@
 - npm install zod
 - npm install dotenv
 - npm install @rocketseat/eslint-config -D
+- npm install bcryptjs
+- npm install @types/bcryptjs -D 

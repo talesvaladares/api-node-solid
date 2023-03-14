@@ -1,0 +1,6 @@
+- npm i prisma -D
+- npm i @prisma/client
+- npx prisma init
+- npx prisma generate
+- npx prisma migrate dev => atualiza o banco com as migrations
+- npx prisma studio
