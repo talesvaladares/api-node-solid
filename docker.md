@@ -8,8 +8,7 @@
 - sudo docker logs <id>
 
 
-
 - sudo docker compose up -d => serve para rodar o script do docker-compose
-- sudo docker compose stop -d => para os containers
+- sudo docker compose stop -d => para parar o containers
 - sudo docker compose down -d => serve para parar e apagar todos os containers
 - sudo service docker start => tem que rodar isso para iniciar o serviço do docker

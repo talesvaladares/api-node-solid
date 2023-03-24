@@ -8,3 +8,4 @@
 - npm install @rocketseat/eslint-config -D
 - npm install bcryptjs
 - npm install @types/bcryptjs -D 
+- npm install dayjs
