@@ -1,13 +1,13 @@
-import { InMemmoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
+import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
 import { describe, expect, it, beforeEach } from 'vitest';
 import { SearchGymUseCase } from './search-gym';
 
-let gymsRepository: InMemmoryGymsRepository;
+let gymsRepository: InMemoryGymsRepository;
 let searchGymUseCase: SearchGymUseCase;
 
 describe('Gym Use Case', () => {
   beforeEach(() => {
-    gymsRepository = new InMemmoryGymsRepository();
+    gymsRepository = new InMemoryGymsRepository();
     searchGymUseCase = new SearchGymUseCase(gymsRepository);
   });
 

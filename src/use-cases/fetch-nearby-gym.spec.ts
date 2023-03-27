@@ -1,13 +1,13 @@
-import { InMemmoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
+import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
 import { describe, expect, it, beforeEach } from 'vitest';
 import { FetchNearbyGymsUseCase } from './fetch-nearby-gym';
 
-let gymsRepository: InMemmoryGymsRepository;
+let gymsRepository: InMemoryGymsRepository;
 let fetchNearbyGymsUseCase: FetchNearbyGymsUseCase;
 
 describe('Fetch Nearby Gym Use Case', () => {
   beforeEach(() => {
-    gymsRepository = new InMemmoryGymsRepository();
+    gymsRepository = new InMemoryGymsRepository();
     fetchNearbyGymsUseCase = new FetchNearbyGymsUseCase(gymsRepository);
   });
 
@@ -34,5 +34,4 @@ describe('Fetch Nearby Gym Use Case', () => {
     expect(gyms).toHaveLength(1);
     expect(gyms).toEqual([expect.objectContaining({ title: 'near gym' })]);
   });
-
 });

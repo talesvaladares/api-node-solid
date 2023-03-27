@@ -3,7 +3,7 @@ import {Gym, Prisma } from "@prisma/client";
 import { randomUUID } from "node:crypto";
 import { FindManyNearbyParams, GymsRepository } from '../gyms-repository';
 
-export class InMemmoryGymsRepository implements GymsRepository {
+export class InMemoryGymsRepository implements GymsRepository {
 
   public items: Gym[] = [];
   
