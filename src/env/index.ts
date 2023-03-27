@@ -3,6 +3,7 @@ import { z as zod } from 'zod';
 
 const envSchema = zod.object({
   NODE_ENV: zod.enum(['dev', 'test', 'production']).default('dev'),
+  JWT_SECRET: zod.string(),
   PORT: zod.coerce.number().default(3333),
 });
 
