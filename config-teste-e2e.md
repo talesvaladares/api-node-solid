@@ -1,0 +1,9 @@
+- dentro da pasta prisma criar uma pasta com nome : vitest-environment-prisma
+- acessar a pasta criada
+- npm init -y
+- criar o arquivo prisma-test-environment.ts
+- entrar no vite.config.ts e fazer as configurações da linha 6
+- entrar na pasta prisma/vitest-environment-prisma
+- npm link
+- voltar para a pasta raiz do projeto
+- npm link vitest-environment-prisma
