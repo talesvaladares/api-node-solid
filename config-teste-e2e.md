@@ -3,7 +3,10 @@
 - npm init -y
 - criar o arquivo prisma-test-environment.ts
 - entrar no vite.config.ts e fazer as configurações da linha 6
-- entrar na pasta prisma/vitest-environment-prisma
-- npm link
-- voltar para a pasta raiz do projeto
-- npm link vitest-environment-prisma
+- npm install npm-run-all -D
+- no package.json criar os scripts
+  - "test:create-prisma-environment": "npm link ./prisma/vitest-environment-prisma",
+  - "test:install-prisma-environment": "npm link vitest-environment-prisma",
+  - "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment"
+- npm install supertest -D
+- npm install @types/supertest -D
