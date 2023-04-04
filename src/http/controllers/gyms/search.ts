@@ -8,7 +8,7 @@ export async function search(request: FastifyRequest, response: FastifyReply) {
     page: z.coerce.number().min(1).default(1),
   });
 
-  const { page, query } = searchGymsQuerySchema.parse(request.body);
+  const { page, query } = searchGymsQuerySchema.parse(request.query);
 
   const searchGymsUseCase = makeSearchGymsUseCase();
 
@@ -17,5 +17,7 @@ export async function search(request: FastifyRequest, response: FastifyReply) {
     page,
   });
 
-  return response.status(200).send(gyms);
+  return response.status(200).send({
+    gyms,
+  });
 }
