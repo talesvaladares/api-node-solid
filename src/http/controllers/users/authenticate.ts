@@ -23,7 +23,9 @@ export async function authenticate(
     });
 
     const token = await response.jwtSign(
-      {},
+      {
+        role: user.role,
+      },
       {
         sign: {
           sub: user.id,
@@ -31,9 +33,29 @@ export async function authenticate(
       }
     );
 
-    return response.status(200).send({
-      token,
-    });
+    const refreshToken = await response.jwtSign(
+      {
+        role: user.role,
+      },
+      {
+        sign: {
+          sub: user.id,
+          expiresIn: '7d', // 7 dias
+        },
+      }
+    );
+
+    return response
+      .setCookie('refreshToken', refreshToken, {
+        path: '/', // todas rodas podem acessar o cookie
+        secure: true, // encripitado com https
+        sameSite: true, // acessivel apenas dentro do mesmo dominio
+        httpOnly: true, // acessivel somente no backend
+      })
+      .status(200)
+      .send({
+        token,
+      });
   } catch (error) {
     if (error instanceof InvalidCredentialsError) {
       // 400 bad request

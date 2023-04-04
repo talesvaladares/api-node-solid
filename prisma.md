@@ -3,4 +3,4 @@
 - npx prisma init
 - npx prisma generate
 - npx prisma migrate dev => atualiza o banco com as migrations
-- npx prisma studio
+- npx prisma studio => abre a interface gráfico do prisma

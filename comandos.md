@@ -10,3 +10,4 @@
 - npm install @types/bcryptjs -D 
 - npm install dayjs
 - npm install @fastify/jwt
+- npm install @fastify/cookie
