@@ -1,6 +1,7 @@
 - npm i prisma -D
 - npm i @prisma/client
 - npx prisma init
-- npx prisma generate
-- npx prisma migrate dev => atualiza o banco com as migrations
+- npx prisma generate => 
+- npx prisma migrate dev => atualiza o banco com as migrations, no momento de execução pergunta o nome da migration
+- npx prisma migrate dev --name <NomeMigration> => atualiza o banco com as migrations já com o nome estabelecido
 - npx prisma studio => abre a interface gráfico do prisma
